@@ -372,3 +372,237 @@ else:
     print("Ready for onboarding")
 
 print("\nEnd")
+#In this example, we take input from the user for their age, qualification, years of experience, skills, willingness to relocate, and background check status. We then use a series of if, elif, and else statements along with logical operators to determine the person's eligibility for a job role based on the provided criteria. The conditions check various factors such as age, qualification, experience, skills, willingness to relocate, and background check status to determine the appropriate job role and hiring decision for the individual. The program also evaluates the experience level and final status of the candidate based on their skills and background check status.
+#Example 13:
+print("Smart Home Automation System")
+
+time_of_day = input("Time of day (morning/afternoon/night): ").lower()
+motion = input("Is motion detected? (yes/no): ").lower()
+temperature = float(input("Enter room temperature: "))
+light_level = input("Light level (low/medium/high): ").lower()
+security_mode = input("Security mode (on/off): ").lower()
+user_home = input("Is user at home? (yes/no): ").lower()
+
+print("\n1. Lighting Control")
+
+if motion == "yes" and not (light_level == "high"):
+    if time_of_day == "night":
+        print("Lights ON at full brightness")
+    elif time_of_day == "evening" or light_level == "low":
+        print("Lights ON at medium brightness")
+    else:
+        print("Lights ON at low brightness")
+elif not (motion == "yes"):
+    print("Lights OFF")
+else:
+    print("No change in lighting")
+
+print("\n2. Temperature Control")
+
+if temperature < 18:
+    if not (user_home == "no"):
+        print("Heating ON")
+    else:
+        print("Heating OFF (energy saving)")
+elif temperature >= 18 and temperature <= 26:
+    if not (motion == "no"):
+        print("Maintain temperature")
+    else:
+        print("Eco mode active")
+else:
+    if user_home == "yes" and not (temperature < 30):
+        print("Cooling ON at high level")
+    elif not (user_home == "yes"):
+        print("Cooling OFF (away mode)")
+    else:
+        print("Cooling ON at moderate level")
+
+print("\n3. Security System")
+
+if security_mode == "on":
+    if not (user_home == "yes") and motion == "yes":
+        print("Alert: Intrusion detected")
+    elif motion == "no" or user_home == "yes":
+        print("Security monitoring active")
+    else:
+        print("Standby mode")
+else:
+    if not (security_mode == "on"):
+        print("Security system disabled")
+    else:
+        print("Unknown state")
+
+print("\n4. Energy Optimization")
+
+if not (motion == "yes") and not (user_home == "yes"):
+    print("All systems in power saving mode")
+elif motion == "yes" or user_home == "yes":
+    print("Normal power usage")
+else:
+    print("Minimal activity detected")
+
+print("\nEnd")
+#In this example, we take input from the user for the time of day, motion detection, room temperature, light level, security mode, and whether the user is at home. We then use a series of if, elif, and else statements along with logical operators to control various aspects of a smart home automation system. The program manages lighting control based on motion and time of day, temperature control based on room temperature and user presence, security system monitoring based on security mode and motion detection, and energy optimization based on motion and user presence. The appropriate actions are printed based on the conditions that are true for each aspect of the smart home automation system.
+#Example 14:
+print("Personalized Fitness Plan Generator")
+
+age = int(input("Enter your age: "))
+fitness_goal = input("Fitness goal (weight_loss/muscle_gain/endurance): ").lower()
+experience = input("Experience level (beginner/intermediate/advanced): ").lower()
+medical_condition = input("Any medical condition? (yes/no): ").lower()
+diet = input("Following a healthy diet? (yes/no): ").lower()
+sleep = int(input("Hours of sleep per day: "))
+time_available = int(input("Workout time available (minutes per day): "))
+
+print("\n1. Plan Selection")
+
+if age < 16:
+    print("Light activity plan recommended")
+else:
+    if fitness_goal == "weight_loss":
+        if not (medical_condition == "yes") and time_available >= 30:
+            if experience == "beginner":
+                print("Cardio + basic HIIT plan")
+            elif experience == "intermediate" or sleep < 6:
+                print("Moderate cardio + strength mix")
+            else:
+                print("Intense HIIT + strength training")
+        elif medical_condition == "yes" or not (time_available >= 30):
+            print("Low intensity fat loss plan")
+        else:
+            print("Custom plan required")
+
+    elif fitness_goal == "muscle_gain":
+        if diet == "yes" and not (medical_condition == "yes"):
+            if experience == "beginner" and sleep >= 7:
+                print("Basic strength training plan")
+            elif experience == "intermediate" or not (sleep >= 7):
+                print("Split training routine")
+            else:
+                print("Advanced hypertrophy program")
+        elif not (diet == "yes"):
+            print("Improve diet before starting muscle gain plan")
+        else:
+            print("Consult professional")
+
+    else:
+        if not (medical_condition == "yes"):
+            if time_available >= 45 and sleep >= 7:
+                print("Endurance training with cardio focus")
+            elif time_available < 45 or not (sleep >= 7):
+                print("Light endurance building plan")
+            else:
+                print("Balanced endurance program")
+        else:
+            print("Medical clearance required")
+
+print("\n2. Recovery Evaluation")
+
+if not (sleep >= 6):
+    print("Poor recovery")
+elif not (sleep >= 8):
+    print("Average recovery")
+else:
+    print("Good recovery")
+
+print("\n3. Consistency Level")
+
+if not (time_available >= 20):
+    print("Low consistency")
+elif not (time_available >= 45):
+    print("Moderate consistency")
+else:
+    print("High consistency")
+
+print("\nEnd")
+#In this example, we take input from the user for their age, fitness goal, experience level, medical condition, diet, sleep hours, and workout time available. We then use a series of if, elif, and else statements along with logical operators to generate a personalized fitness plan based on the provided criteria. The program selects an appropriate fitness plan based on the user's age, fitness goal, experience level, medical condition, diet, sleep hours, and workout time available. It also evaluates the user's recovery and consistency levels based on their sleep hours and workout time. The appropriate messages are printed based on the conditions that are true for each aspect of the personalized fitness plan generator.
+#Example 15:
+print("Startup Idea Evaluation System")
+
+idea_uniqueness = int(input("Idea uniqueness (1-10): "))
+market_demand = int(input("Market demand (1-10): "))
+budget = int(input("Available budget: "))
+team_size = int(input("Team size: "))
+experience = input("Team experience (low/medium/high): ").lower()
+competition = input("Competition level (low/medium/high): ").lower()
+scalability = input("Is the idea scalable? (yes/no): ").lower()
+risk_tolerance = input("Risk tolerance (low/medium/high): ").lower()
+
+print("\n1. Feasibility Analysis")
+
+if idea_uniqueness < 4 or not (market_demand >= 5):
+    print("Low feasibility")
+else:
+    if idea_uniqueness >= 4 and idea_uniqueness < 7:
+        if market_demand >= 5 and not (competition == "high"):
+            if scalability == "yes" and not (budget < 50000):
+                print("Moderate feasibility")
+            elif scalability == "no" or budget < 50000:
+                print("Limited feasibility")
+            else:
+                print("Conditional feasibility")
+        elif competition == "high" and not (risk_tolerance == "high"):
+            print("Risky idea")
+        else:
+            print("Needs improvement")
+
+    elif idea_uniqueness >= 7:
+        if market_demand >= 7 and scalability == "yes":
+            if experience == "high" and team_size >= 3:
+                print("High feasibility startup")
+            elif experience == "medium" or team_size < 3:
+                print("Promising but needs stronger team")
+            else:
+                print("Execution risk present")
+        elif not (market_demand >= 7):
+            print("Innovative but weak demand")
+        else:
+            print("Scalability concerns")
+
+print("\n2. Financial Viability")
+
+if not (budget >= 20000):
+    print("Insufficient budget")
+elif not (budget >= 100000):
+    print("Moderate financial strength")
+else:
+    print("Strong financial backing")
+
+print("\n3. Risk Assessment")
+
+if risk_tolerance == "low":
+    if competition == "high" or not (market_demand >= 7):
+        print("High perceived risk")
+    else:
+        print("Manageable risk")
+elif risk_tolerance == "medium":
+    if competition == "high" and not (scalability == "yes"):
+        print("Moderate to high risk")
+    else:
+        print("Balanced risk")
+else:
+    if scalability == "yes" and idea_uniqueness >= 7:
+        print("High risk high reward")
+    else:
+        print("Aggressive but uncertain")
+
+print("\n4. Team Strength")
+
+if not (team_size >= 2):
+    print("Weak team")
+elif not (team_size >= 5):
+    print("Average team")
+else:
+    print("Strong team")
+
+print("\n5. Final Decision")
+
+if idea_uniqueness >= 7 and market_demand >= 7 and scalability == "yes" and not (budget < 50000):
+    print("Proceed with startup")
+elif idea_uniqueness >= 5 and market_demand >= 5:
+    print("Refine idea before launching")
+else:
+    print("Do not proceed")
+
+print("\nEnd")
+#In this example, we take input from the user for various factors related to a startup idea, such as idea uniqueness, market demand, budget, team size, experience, competition level, scalability, and risk tolerance. We then use a series of if, elif, and else statements along with logical operators to evaluate the feasibility, financial viability, risk assessment, team strength, and final decision for the startup idea based on the provided criteria. The program assesses different aspects of the startup idea and provides feedback on its potential success or areas that need improvement. The appropriate messages are printed based on the conditions that are true for each aspect of the startup idea evaluation system.
